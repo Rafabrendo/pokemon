@@ -1,8 +1,15 @@
-@font-face {
-    
+@charset "UTF-8";
+
+*{
+    font-family: 'Roboto', sans-serif;
 }
 
-h1{
-    color: red;
-    font-family: 'Roboto', sans-serif;
+.content{
+    padding: 1rem; /*Para dar mais flexibilidade.*/
+    
+
+}
+
+.content h1{
+    margin: 0;
 }
