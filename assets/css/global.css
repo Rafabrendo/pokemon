@@ -2,6 +2,8 @@
 
 *{
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    /* Essa propriedade vai considerar a borda como tamanho total. */
     
 }
 
@@ -25,6 +27,14 @@ ol.pokemons{
     background-color: #14A06F;
     color: #ffff;
     border-radius: 1rem;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    
 
+}
+
+ol.pokemons li> img{
+    max-width: 100%;
+    height: 100px;
+    align-self: flex-end;
 }
