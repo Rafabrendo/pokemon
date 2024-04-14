@@ -1,22 +1,24 @@
 
-function convertPokemonTypesToLi(pokemonTypes){
-    return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li> `)
-}
+// function convertPokemonTypesToLi(pokemonTypes){
+//     return pokemonTypes.map((typeSlot) => `<li class="type">${typeSlot.type.name}</li> `)
+// }
 
 
 function convertPokemonToLi(pokemon){
     return `
         <li class="pokemon">
-                    <span class="number">#${pokemon.order}</span>
+                    <span class="number">#${pokemon.number}</span>
                     <span class="name">${pokemon.name}</span>
                     
                     <div class="detail">
                         <ol class="types">
-                            ${convertPokemonTypesToLi(pokemon.types).join('')}
-                           
+                            ${pokemon.types.map((type) => `<li class="type">${type}</li>`).join('')}
+                            
                         </ol>
 
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg" alt="${pokemon.name}">
+                        <img src="${pokemon.photo}"
+                             alt="${pokemon.name}">
+                        
                     </div>
                 
                 </li>
@@ -24,14 +26,19 @@ function convertPokemonToLi(pokemon){
     `
 }
 
+//<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg" alt="${pokemon.name}"></img>
+
 //Posso pegar a imagem assim tbm:
 // img src="${pokemon.sprites.other.dream_wolrd.front_default}"
 
 
 const pokemonList = document.getElementById('pokemonList')
 
-pokeApi.getPokemons().then((pokemons)=> {
-       
+pokeApi.getPokemons().then((pokemons = []) => {
+        const newHtml = pokemons.map(convertPokemonToLi).join('')
+        pokemonList.innerHTML = newHtml
+      
+    
         // const newList = pokemons.map((pokemon)=> convertPokemonToLi(pokemon))
         // const newList = pokemons.map(convertPokemonToLi).join('')
         
@@ -40,7 +47,7 @@ pokeApi.getPokemons().then((pokemons)=> {
         // passo a string vazia para não aparecer a virgula
 
         //diminuindo a verbosidade 
-        pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
+        // pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
 
 
         //código antigo:
@@ -50,5 +57,4 @@ pokeApi.getPokemons().then((pokemons)=> {
         //     listItems.push(convertPokemonToLi(pokemon))
         // } 
         //     console.log(listItems)
-    })
-    
+     })
