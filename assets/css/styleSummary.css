@@ -26,10 +26,15 @@ body{
 
 .buttonReturn{
     grid-area: header;
+    
 }
+
+
 
 .number{
     grid-area: number;
+    font-weight: 600;
+    color: #ffff;
 }
 
 
@@ -56,6 +61,8 @@ body{
     padding: 5px;
     text-align: center;
     width: 80px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .detail img{
@@ -67,15 +74,20 @@ body{
 .name{
     font-size: 2rem;
     padding: 0px 10px 10px 0px;
+    font-weight: 800;
+    color: #fff;
 }
 
 
 .section2{
+    padding: 50px;
     background-color: #fff;
     border: 1px solid transparent;
     border-radius: 10px 10px 0px 0px;
     height: 100vh;
     padding-top: 30px;
+    min-width: 370px;
+    
     
 }
 
@@ -83,6 +95,30 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#section2Header{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.conteudo{
+    width: fit-content;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    line-height: 2rem;
+}
+
+.conteudo ul:first-of-type li{
+    font-weight: 300;
+    color: rgb(60, 68, 68);
+}
+
+#aboutUl{
+    font-weight: 600;
+    color: black;
 }
 
 
