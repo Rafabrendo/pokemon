@@ -1,22 +1,26 @@
 @charset "UTF-08";
 
-@import url(assets/css/variaveis.css);
+@import url(variaveis.css);
+
+body{
+    overflow: scroll;
+}
 
 .bodySummary{
     background-color: aquamarine;
 }
 
 .section1{
-    height: 400px;
+    height: 335px;
     display: grid;
     grid-template-rows: 1fr 4fr;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
-    "header - number"
-    "detail detail detail";
+    "header .  number"
+    ". detail .";
     justify-items: center;
     align-items: center;
-   
+
     position: relative;
 }
 
@@ -34,8 +38,8 @@
     grid-area: detail;
     /* grid-column: span 3; */
     position: absolute;
-    top: 48px;
-    left: 30px;
+    right: 15px;
+
 }
 
 .types{
@@ -57,6 +61,7 @@
 .detail img{
     max-width: 100%;
     margin: 0px 20px 0px;
+    padding-top: 40px;
 }
 
 .name{
@@ -71,4 +76,13 @@
     border-radius: 10px 10px 0px 0px;
     height: 100vh;
     padding-top: 30px;
+    
 }
+
+.section2 ol{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
